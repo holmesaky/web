@@ -5,23 +5,116 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </head>
 
 <body style="background-color: white; align-items: unset;">
-    <header >
-    <nav><ul >
-        <li class="about"> Home Page</li>
-        <li class="about"> About Us</li>
-        <li class="about"> Contact Us</li>
-        <li class="about"> Login </li>
-        <li class="about"> Log out </li>
 
-    </ul></nav>
-            <div class="test"> </div>
+    <header>
+        <nav>
+            <ul>
+                <li class="about"> Home Page</li>
+                <li class="about"> About Us</li>
+                <li class="about"> Contact Us</li>
+                <li class="about"> Login </li>
+                <li class="about"> Log out </li>
 
+            </ul>
+        </nav>
     </header>
+
+    <div class="test">
+
+
+        <div class="left">
+            <div class="button"> <i class="material-icons g">group</i> <span>View User</span> </div>
+            <div class="button"> <i class="material-icons g">remove</i> <span>Delete user</span> </div>
+            <div class="button"> <i class="material-icons g">add</i> <span>Add User</span> </div>
+            <div class="button"> <i class="material-icons g">settings</i> <span>Update Information </span> </div>
+            <div class="button"> <i class="material-icons g">lock</i> <span>setting password</span> </div>
+
+        </div>
+
+        <div class="center">
+            <div class="view"> <i class="material-icons x"> close </i> </div>
+            <div class="view"> <i class="material-icons x"> close </i>
+                <form>
+                    <br>
+                    <h3 class="head"> Delete User From Table </h3>
+                    <br>
+                    <br>
+                    <div class="delete"> <label for="user"> User Name </label>
+                        <input type="text" name="userdelt" id="user" placeholder="Enter User Name  ">
+
+                    </div>
+                    
+                </form>
+                <br>
+                
+                <div class="msg">
+                    <h4 style="text-indent:10px ;" class="alert-heading">Well done!</h4>
+                    <p id="error2">Aww yeah, you successfully delete user.</p>
+
+                </div>
+                <button type="button" class="btn btn-outline-danger">Sign up</button>
+            </div>
+
+
+
+            <div class="view"> <i class="material-icons x"> close </i>
+                <h3 class="head"> Add User To Table </h3>
+                <button type="button" class="btn btn-outline-danger">Sign up</button>
+                <div class="msg">
+                    <h4 style="text-indent:10px ;" class="alert-heading">Well done!</h4>
+                    <p id="error2">Aww yeah, you successfully delete user.</p>
+
+                </div>
+
+
+            </div>
+            <div class="view"> <i class="material-icons x"> close </i>
+                <h3 class="head"> Update User Information </h3>
+                <form>
+
+                    <br>
+                    <div class="update"> <label for="username"> User Name </label>
+                        <input type="text" name="username" id="username" placeholder="Enter User Name  ">
+                        <br>
+                        <br>
+                        <label for="useremail"> Email </label>
+                        <input type="text" name="useremail" id="useremail" placeholder="Enter Email ">
+                        <br>
+                        <br>
+                        <label for="userimg"> Select image </label>
+                        <input type="file" name="userimg" id="userimg" placeholder="Enter image ">
+                    </div>
+
+                </form>
+                <div class="msg">
+                    <h4 style="text-indent:10px ;" class="alert-heading">Well done!</h4>
+                    <p id="error2">Aww yeah, you successfully delete user.</p>
+
+                </div>
+
+
+
+
+            </div>
+            <div class="view"> <i class="material-icons x"> close </i> </div>
+
+        </div>
+
+
+    </div>
+
+
 
 </body>
 

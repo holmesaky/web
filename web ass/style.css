@@ -201,28 +201,3 @@ i.photo {
     font-size: 50px;
 }
 
-header {
-    position: relative;
-    height: 100px;
-    width: 100%;
-  background-color: #ef3a3a;
-}
-.about{
-    
-    display: inline-block;
-    padding: 10px;
- 
-   
-}
-nav{
-    position: relative;
-
-    float: right;
-    width: fit-content;
-    top:50px;
-    color: beige ;
-    
-}
-.test{
-    height: 900px
-}
