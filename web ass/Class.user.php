@@ -6,7 +6,7 @@ class user
 	static function getAlluser()
 	{
 		$pdo=Database::connect();
-		$query=$pdo->prepare("select * from user )");
+		$query=$pdo->prepare("select * from user ");
 		$query->execute();
 		return $query;
 	}
@@ -18,7 +18,14 @@ class user
 		$query->execute(array(Tools::cleanData($name)));
 		return $query;
 	}
+	static function deleteUser($name)
+	{
+		$pdo=Database::connect();
+		$query=$pdo->prepare("delete from user where user.name=? and user.type !=1");
+		$query->execute(array(Tools::cleanData($name)));
+		return $query;
 		
+	}	
 	static function updateStudent($name,$email,$pass,$img)
 	{
 		$name=Tools::cleanData($name);
@@ -28,7 +35,7 @@ class user
 	   	
        $pdo=Database::connect();
 	   $query=$pdo->prepare("update user set  email=?, pass=?, image=? where name=?");
-	   return $query->execute(array($email,$pass,$image,$name));
+	   return $query->execute(array($email,$pass,"image",$name));
 	}	
 		
 	static function adduser($name,$email,$pass,$img)
