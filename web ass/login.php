@@ -1,7 +1,4 @@
 
-<?php
-   include("config.php");
-   session_start();?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -17,16 +14,21 @@
 </head>
 
 <body>
+
+
+
     <Div class="full">
         <span class="titel"> Login </span>
         <div class="forms">
-            <form action="login.php" method="post">
+            <form action="userpage.php" method="post">
                 <div class="info">
                     <i class="material-icons l">person</i>
-                    <input type="text" name="username" placeholder="Enter user name"><br>
+                    <input type="text" name="username" placeholder="Enter user name" required><br>
                     <i class="material-icons l">lock</i>
-                    <input type="password" name="password" placeholder=" Enter Password">
+                  
+                    <input type="password" name="password" placeholder=" Enter Password" required>
                     <i class="material-icons p">visibility</i>
+
                 </div>
 
                 <div class="check">
@@ -46,35 +48,9 @@
         </div>
     </Div>
 
-    <?php
-   
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
+
       
-      $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
       
-	  
-      $sql = "SELECT * FROM user WHERE name='$myusername' AND pass='$mypassword' ";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_assoc($result);
-      //$active = $row['active'];
-      
-      $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
-      if($count == 1) {
-        
-         //$_SESSION['login_user'] = $myusername;
-         
-         header("location: index.php");
-      }else {
-        echo "Your Login Name or Password is invalid";
-      }
-   }
-?>
-    
 
 
 </body>

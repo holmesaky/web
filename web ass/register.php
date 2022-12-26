@@ -32,37 +32,42 @@
         }
 
         else{
-		$test =user::adduser($_POST['username'],$_POST['email'], $_POST['pass'],"imag");
 
-     
-
-
+		$test =user::adduser($_POST['username'],$_POST['loc'], $_POST['pass'],$_FILES["image"]);
         if($test)
 		{	
             echo '<script>alert(" Records inserted successfully.")</script>';
+            echo '<script type="text/javascript">
+        window.open("index.php");
+         </script>';
 		}
 		else
 		{
             echo '<script>alert(" Records Canit insert.")</script>';
-		}  
-	}}
-	
+		}         
+    
+    }
+        
+	}
+
+
+
+          
+
+
 	?>
-
-
-
 
     <div class="full" id="sign">
         <span class="titel"> Sign Up </span>
         <div class="forms">
-            <form action="register.php" method="post">
+            <form action="register.php" method="post" enctype="multipart/form-data">
                 <div class="info">
                     <i class="material-icons s">person</i>
                     <input type="text" name="username" placeholder="Enter your  Name" required> <br>
                    
                     <i class="material-icons s">email</i>
 
-                    <input type="text" name="email" placeholder="Enter your  Email" required>
+                    <input type="text" name="loc" placeholder="Enter your  Location" required>
                     <br>
                     <i class="material-icons s">lock</i>
                     <input type="password" name="pass" placeholder=" Enter Password">
@@ -74,24 +79,23 @@
                     
                     <label for="input" style="cursor: pointer; position: absolute; top:20px ;" >
                         Select Image
-                        <input type="file" id="input" name="imag"   accept="image/jpeg, image/png, image/jpg">
+                        <input type="file" id="input" name="image"   accept="image/jpeg, image/png, image/jpg" />
                         
                     </label>
-                    <div id="image"> <i class="material-icons photo">person</i> </div>
+                    <div id="image"> <i id ="i"class="material-icons photo">person</i> </div>
                 </div>
                    
-                   
-                 
-                    <script> const image_input = document.querySelector("#input");
+                    <script> 
+                    const image_input = document.querySelector("#input");
                         image_input.addEventListener("change", function () {
                             const reader = new FileReader();
                             reader.addEventListener("load", () => {
                                 const uploaded_image = reader.result;
                                 document.querySelector("#image").style.backgroundImage = `url(${uploaded_image})`;
-                         
-                        
+                                
                         });
                             reader.readAsDataURL(this.files[0]);
+
                         });</script>
 
 

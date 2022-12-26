@@ -112,7 +112,7 @@ if (isset($_POST['delete'])||isset($_POST['remove'])) {
         }
 
         else{
-		$test =user::adduser($_POST['username'],$_POST['userloc'], $_POST['userpass'],"imag");
+		$test =user::adduser($_POST['username'],$_POST['userloc'], $_POST['userpass'],$_FILES['imag']);
         if($test)
 		{	
             echo "<script>
@@ -145,8 +145,8 @@ if (isset($_POST['delete'])||isset($_POST['remove'])) {
         window.onload = function show() {
         var y = document.getElementById('U_users');
                 y.style.display = 'block';
-                var y = document.getElementById('V_users');
-                y.style.display = 'block';
+                var x = document.getElementById('V_users');
+                x.style.display = 'block';
             }
       </script>";
 		
@@ -154,14 +154,15 @@ if (isset($_POST['delete'])||isset($_POST['remove'])) {
  
     if(isset($_POST['upd'])){
 
-        $test=user::updateStudent($_POST['username'],$_POST['userloc'],$_POST['userpass'],'imge');
+        $test=user::updateStudent($_POST['username'],$_POST['userloc'],$_POST['userpass'],$_FILES['imag']);
   if($test){
     echo "<script>
     window.onload = function show() {
         var y = document.getElementById('U_users');
         var m=document.getElementById('up');
-        m.innerHTML='Aww yeah, The user updated  succcssfuly';
         y.style.display = 'block';
+        m.innerHTML='Aww yeah, The user updated  succcssfuly';
+        
     }</script>";
 
 }
@@ -177,7 +178,58 @@ else{
 
     }
 
+ if(isset($_POST['set'])){
 
+     $userInfo=user::getUser($_POST['userset']);
+     $row=$userInfo->fetch();
+     $count=$userInfo->rowCount();
+     if($count==1){
+       if($row['pass']==$_POST['useropass']){
+        $res=$_POST['usernpass'];
+        $test=user::setpass($_POST['userset'],$res);
+
+        echo "<script>
+        window.onload = function show() {
+            var y = document.getElementById('S_users');
+            var m=document.getElementById('errorset');
+            m.innerHTML='Aww yeah, The Password Set  ';
+            y.style.display = 'block';
+            document.getElementById('my_form').onsubmit = function() {
+                return false;
+            }
+        }</script>";
+
+
+       }
+       else{
+
+        echo "<script>
+        window.onload = function show() {
+            var y = document.getElementById('S_users');
+            var m=document.getElementById('errorset');
+            m.innerHTML='Aww yeah, The Password uncorrect ';
+            m.style.color='red';
+            y.style.display = 'block';
+        
+
+        }</script>";
+      }
+       }
+     else{
+        echo "<script>
+        window.onload = function show() {
+            var y = document.getElementById('S_users');
+            var m=document.getElementById('errorset');
+            m.innerHTML='Aww yeah, The user not exist ';
+            m.style.color='red';
+            y.style.display = 'block';
+        }</script>";
+
+     }
+
+
+
+}
 
   
 
@@ -228,11 +280,12 @@ else{
 	     $s=user::getAlluser();
 		 while ($row=$s->fetch())
 		{
+            
 				echo "<tr>";
 				echo "<td>{$row['name']}</td>";
-				echo "<td>{$row['email']}</td>";
+				echo "<td>{$row['location']}</td>";
 				echo "<td>{$row['pass']}</td>";
-				echo "<td>{$row['image']}</td>";
+				echo "<td> {$row['image']}</td>";
 				echo "<td>{$row['type']}</td>";
 				echo "<td><form method='post'>";
 				echo "<input type='hidden' value='{$row['name']}' name='username' />";
@@ -322,7 +375,7 @@ else{
                         <br>
                         <br>
                         <i class="material-icons u">location_on</i>
-                        <input type="text" name="userloc" id="usereloc" value="<?php echo $res['email'];?>">
+                        <input type="text" name="userloc" id="usereloc" value="<?php echo $res['location'];?>">
                         <br>
                         <br>
                         <i class="material-icons u">lock</i>
@@ -356,26 +409,28 @@ else{
                 <h3 class="head"> setting password </h3>
                 <br>
                 <br>
+            <form action="index.php" method="post" id="my_form">
                 <div class="delete"> <i class="material-icons u">person</i>
-                    <input type="text" name="userdelt" id="user" placeholder="Enter User Name  ">
+                    <input type="text" name="userset" id="user" placeholder="Enter User Name  ">
                 </div>
                 <br>
                 <br>
                 <div class="delete"> <i class="material-icons u">lock</i>
-                    <input type="password" name="userdelt" id="user" placeholder="Enter Old Password  ">
+                    <input type="password" name="useropass" id="user" placeholder="Enter Old Password  ">
                 </div>
                 <br>
                 <br>
                 <div class="delete"> <i class="material-icons u">lock</i>
-                    <input type="password" name="userdelt" id="user" placeholder="Enter New Password  ">
+                    <input type="password" name="usernpass" id="user" placeholder="Enter New Password  ">
                 </div>
                 <br>
                 <br>
                 <br>
                 <br>
                 <div >
-                <input type="submit" class="btn btn-outline-danger  del" value ="Set">
-                </div></form>
+                <input type="submit" name="set"    class="btn btn-outline-danger  del" value ="Set">
+                </div>
+            </form>
                 
 
                 <div class="msg" style="    margin-top: -156px;">
