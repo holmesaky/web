@@ -10,7 +10,24 @@
     <title>Login Page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+   
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script>
+function showpass() {
+  
+  var x = document.getElementById("show");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+
+
+</script>
+
+
 </head>
 
 <body>
@@ -26,8 +43,8 @@
                     <input type="text" name="username" placeholder="Enter user name" required><br>
                     <i class="material-icons l">lock</i>
                   
-                    <input type="password" name="password" placeholder=" Enter Password" required>
-                    <i class="material-icons p">visibility</i>
+                    <input id="show" type="password" name="password" placeholder=" Enter Password" required>
+                    <i  class="material-icons p" onclick="showpass()">visibility</i>
 
                 </div>
 

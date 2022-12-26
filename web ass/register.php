@@ -13,54 +13,34 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 
+
+
+
+  <script>
+function showpass() {
+  
+  var x = document.getElementById("show");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+
+
+</script>
 </head>
 
 <body>
 
 
-<?php
 
-	require_once('Class.user.php');
-
-
-	if($_SERVER['REQUEST_METHOD']=='POST')
-	{
-        $stuInfo=user::getUser($_POST['username']);
-        $row=$stuInfo->rowCount();
-        if($row == 1){
-            echo '<script>alert(" The name alrady exist ")</script>';
-        }
-
-        else{
-
-		$test =user::adduser($_POST['username'],$_POST['loc'], $_POST['pass'],$_FILES["image"]);
-        if($test)
-		{	
-            echo '<script>alert(" Records inserted successfully.")</script>';
-            echo '<script type="text/javascript">
-        window.open("index.php");
-         </script>';
-		}
-		else
-		{
-            echo '<script>alert(" Records Canit insert.")</script>';
-		}         
-    
-    }
-        
-	}
-
-
-
-          
-
-
-	?>
 
     <div class="full" id="sign">
         <span class="titel"> Sign Up </span>
         <div class="forms">
-            <form action="register.php" method="post" enctype="multipart/form-data">
+            <form action="userpage.php" method="post" enctype="multipart/form-data">
                 <div class="info">
                     <i class="material-icons s">person</i>
                     <input type="text" name="username" placeholder="Enter your  Name" required> <br>
@@ -70,11 +50,11 @@
                     <input type="text" name="loc" placeholder="Enter your  Location" required>
                     <br>
                     <i class="material-icons s">lock</i>
-                    <input type="password" name="pass" placeholder=" Enter Password">
-                    <i class="material-icons pas"> visibility </i>
+                    <input  type="password" name="password" placeholder=" Enter Password">
+                    <i class="material-icons pas" onclick="showpass()"> visibility </i>
                     <br>
                     <i class="material-icons s">lock</i>
-                    <input type="password" name="Cpass" placeholder=" conform password"><br>
+                    <input id="show" type="password" name="Cpass" placeholder=" conform password"><br>
                    <div id="choos"> 
                     
                     <label for="input" style="cursor: pointer; position: absolute; top:20px ;" >
@@ -84,18 +64,17 @@
                     </label>
                     <div id="image"> <i id ="i"class="material-icons photo">person</i> </div>
                 </div>
-                   
-                    <script> 
-                    const image_input = document.querySelector("#input");
+                  
+                <script> const image_input = document.querySelector("#input");
                         image_input.addEventListener("change", function () {
                             const reader = new FileReader();
                             reader.addEventListener("load", () => {
                                 const uploaded_image = reader.result;
                                 document.querySelector("#image").style.backgroundImage = `url(${uploaded_image})`;
-                                
+                         
+                        
                         });
                             reader.readAsDataURL(this.files[0]);
-
                         });</script>
 
 
