@@ -29,23 +29,28 @@ class user
 	}	
 	static function updateStudent($name,$email,$pass,$img)
 	{
-		global $count ;
-		$count++;
+		
 		$name=Tools::cleanData($name);
 		$email=Tools::cleanData($email);
 		$pass=Tools::cleanData($pass);
+
 		$temp=explode(".",$img['name']);
 		$temp=end($temp);
 		$fileExtention=strtolower($temp);
-		$fileName='image'.$count.''. $fileExtention;
+		$c=rand(1,100);
+	   $fileName=$c."img.".$fileExtention;
 
+	 
 		
 	   	
        $pdo=Database::connect();
 	   $query=$pdo->prepare("update user set  location=?, pass=?, image=? where name=?");
-	   if( $query->execute(array($email,$pass,$fileName,$name))){
-		move_uploaded_file($img['tmp_name'],"uploads/".$fileName);
-	   }
+	   
+	   if( $query->execute(array($email,$pass,$fileName,$name)))
+	   move_uploaded_file($img['tmp_name'],"uploads/".$fileName);
+
+	   
+	   return $query;
 	}	
 		
 
@@ -66,10 +71,13 @@ class user
 	   $email=Tools::cleanData($email);
 	   $pass=Tools::cleanData($pass);
 	   //$img=Tools::cleanData($img);
+
+
 	   $temp=explode(".",$img['name']);
 	   $temp=end($temp);
 	   $fileExtention=strtolower($temp);
-	   $fileName="img.".$fileExtention;
+	   $c=rand(1,100);
+	   $fileName= $c."img.".$fileExtention;
 	   	
        $pdo=Database::connect();
 	   $query=$pdo->prepare("insert into user values (?,?,?,?,?)");

@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style4.css">
 
     <script>
        
@@ -41,16 +41,30 @@ require_once('Class.user.php');
 //require_once('Class.Tools.php');
 
 
-
-if (isset($_POST['delete'])||isset($_POST['remove'])) {
-   if(isset($_POST['delete'])){
-    $temp=$_POST['userdelt'];
-   }
-   if(isset($_POST['remove'])){
+if(isset($_POST['remove'])){
     $temp=$_POST['username'];
-   }
+    
+    $row1=user::getUser($temp);
+    
+        if($row1->fetch()){
+            $deluser=user::deleteUser($temp);
+            
+            if($deluser->rowCount()> 0){
+                echo "<script>
+                window.onload = function show() {
+                    var y = document.getElementById('V_users');
+                    y.style.display = 'block';
+                }</script>";
 
 
+            }}
+}
+
+
+
+if (isset($_POST['delete'])) {
+  
+    $temp=$_POST['userdelt'];
     
     $row1=user::getUser($temp);
     
@@ -63,6 +77,8 @@ if (isset($_POST['delete'])||isset($_POST['remove'])) {
                 window.onload = function show() {
                     var y = document.getElementById('D_users');
                     var m=document.getElementById('error2');
+                    var x=document.getElementById('id1');
+                    x.style.display = 'block';
                     m.innerHTML='Aww yeah, The user deleted succcssfuly';
                     y.style.display = 'block';
                 }</script>";
@@ -75,6 +91,8 @@ if (isset($_POST['delete'])||isset($_POST['remove'])) {
             window.onload = function show() {
                 var y = document.getElementById('D_users');
                 var m=document.getElementById('error2');
+                var x=document.getElementById('id1');
+                    x.style.display = 'block';
                 m.innerHTML='Aww yeah, Cant delete Admin';
                 m.style.color='red';
                 y.style.display = 'block';
@@ -88,6 +106,8 @@ if (isset($_POST['delete'])||isset($_POST['remove'])) {
                 var y = document.getElementById('D_users');
                 y.style.display = 'block';
                 var m=document.getElementById('error2');
+                var x=document.getElementById('id1');
+                    x.style.display = 'block';
                 m.innerHTML='Aww yeah, user not exist !!  ';
                 m.style.color='red';
     
@@ -105,6 +125,8 @@ if (isset($_POST['delete'])||isset($_POST['remove'])) {
                 var y = document.getElementById('A_users');
                 y.style.display = 'block';
                 var m=document.getElementById('add');
+                var x=document.getElementById('id2');
+                    x.style.display = 'block';
                 m.innerHTML='Aww yeah, user Alredy exist !!  ';
                 m.style.color='red';
     
@@ -119,6 +141,8 @@ if (isset($_POST['delete'])||isset($_POST['remove'])) {
             window.onload = function show() {
                 var y = document.getElementById('A_users');
                 var m=document.getElementById('add');
+                var x=document.getElementById('id2');
+                    x.style.display = 'block';
                 m.innerHTML='Aww yeah, The user inserted  succcssfuly';
                 y.style.display = 'block';
             }</script>";
@@ -130,6 +154,8 @@ if (isset($_POST['delete'])||isset($_POST['remove'])) {
                 var y = document.getElementById('A_users');
                 y.style.display = 'block';
                 var m=document.getElementById('add');
+                var x=document.getElementById('id2');
+                    x.style.display = 'block';
                 m.innerHTML='Aww yeah, user Cant inserted  !!  ';
                 m.style.color='red';
     
@@ -157,12 +183,12 @@ if (isset($_POST['delete'])||isset($_POST['remove'])) {
         $test=user::updateStudent($_POST['username'],$_POST['userloc'],$_POST['userpass'],$_FILES['imag']);
   if($test){
     echo "<script>
+    alert(' The User Updated.');
+    </script>";
+    echo "<script>
     window.onload = function show() {
-        var y = document.getElementById('U_users');
-        var m=document.getElementById('up');
+        var y = document.getElementById('V_users');
         y.style.display = 'block';
-        m.innerHTML='Aww yeah, The user updated  succcssfuly';
-        
     }</script>";
 
 }
@@ -171,6 +197,11 @@ else{
     window.onload = function show() {
         var y = document.getElementById('U_users');
         var m=document.getElementById('up');
+        var x=document.getElementById('id3');
+                    x.style.display = 'block';
+                    document.getElementById('username').value = '';
+                    document.getElementById('userloc').value = '';
+                    document.getElementById('userpass').value = '';
         m.innerHTML='Aww yeah, The user Cant updated ';
         y.style.display = 'block';
     }</script>";
@@ -192,6 +223,8 @@ else{
         window.onload = function show() {
             var y = document.getElementById('S_users');
             var m=document.getElementById('errorset');
+            var x=document.getElementById('id4');
+                    x.style.display = 'block';
             m.innerHTML='Aww yeah, The Password Set  ';
             y.style.display = 'block';
             document.getElementById('my_form').onsubmit = function() {
@@ -207,6 +240,8 @@ else{
         window.onload = function show() {
             var y = document.getElementById('S_users');
             var m=document.getElementById('errorset');
+            var x=document.getElementById('id4');
+            x.style.display = 'block';
             m.innerHTML='Aww yeah, The Password uncorrect ';
             m.style.color='red';
             y.style.display = 'block';
@@ -220,6 +255,8 @@ else{
         window.onload = function show() {
             var y = document.getElementById('S_users');
             var m=document.getElementById('errorset');
+            var x=document.getElementById('id4');
+            x.style.display = 'block';
             m.innerHTML='Aww yeah, The user not exist ';
             m.style.color='red';
             y.style.display = 'block';
@@ -316,7 +353,7 @@ else{
                     
                 </form>
                 <br>
-                <div class="msg">
+                <div class="msg" id="id1">
                     <h4 style="text-indent:10px ;" class="alert-heading">Well done!</h4>
                     <p id="error2">Aww yeah, you successfully delete user.</p>
 
@@ -328,7 +365,7 @@ else{
 
             <div class="view" id="A_users"> <i class="material-icons x" onclick="hide('A_users')"> close </i>
             <h3 class="head"> Add New User </h3>
-                <form action="index.php" method="post" style="width: fit-content;">
+                <form action="index.php" method="post" style="width: fit-content;" enctype="multipart/form-data">
                     <br>
                     <div class="Add"> <i class="material-icons u">person</i>
                         <input type="text" name="username" id="username" placeholder="Enter User Name  ">
@@ -355,7 +392,7 @@ else{
                     </div>
 
                 </form>
-                <div class="msg add">
+                <div class="msg add" id="id2">
                     <h4 style="text-indent:10px ;" class="alert-heading">Well done!</h4>
                     <p id="add">Aww yeah, you successfully delete user.</p>
                 </div>
@@ -367,7 +404,7 @@ else{
             </div>
             <div class="view" id="U_users"> <i class="material-icons x" onclick="hide('U_users')"> close </i>
                 <h3 class="head"> Update User Information </h3>
-                <form style="width: fit-content;" method="post" action="index.php">
+                <form style="width: fit-content;" method="post" action="index.php" enctype="multipart/form-data">
 
                     <br>
                     <div class="update"> <i class="material-icons u">person</i>
@@ -375,7 +412,7 @@ else{
                         <br>
                         <br>
                         <i class="material-icons u">location_on</i>
-                        <input type="text" name="userloc" id="usereloc" value="<?php echo $res['location'];?>">
+                        <input type="text" name="userloc" id="userloc" value="<?php echo $res['location'];?>">
                         <br>
                         <br>
                         <i class="material-icons u">lock</i>
@@ -384,7 +421,7 @@ else{
                         
                         <label id="lab" for="input" style="cursor: pointer; position: relative; top:-14px ;">
                             Select Image
-                            <input type="file" id="input" name="imag"  value="image.png" accept="image/jpeg, image/png, image/jpg">
+                            <input type="file" id="input" name="imag"  value="<?php echo $res['image'];?>" accept="image/jpeg, image/png, image/jpg">
                         </label>
                         
                         <div id="image" style="display:inline; "> <i class="material-icons photo" style=" margin-top:30px;">person</i> </div>
@@ -395,7 +432,7 @@ else{
                     </div>
                     
                 </form>
-                <div class="msg up" >
+                <div class="msg up" id="id3">
                     <h4 style="text-indent:10px ;" class="alert-heading">Well done!</h4>
                     <p id="up">Aww yeah, you successfully update user.</p>
                 </div>
@@ -433,7 +470,7 @@ else{
             </form>
                 
 
-                <div class="msg" style="    margin-top: -156px;">
+                <div class="msg" id="id4"style="    margin-top: -156px;">
                     <h4 style="text-indent:10px ;" class="alert-heading">Well done!</h4>
                     <p id="errorset">Aww yeah, you successfully setting password.</p>
 
