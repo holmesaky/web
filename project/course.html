@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="styleh.css">
     <script src="script.js">
     </script>
@@ -22,14 +23,14 @@
 
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-light shadow navbar-light">
+    <nav class="navbar navbar-expand-lg bg-light shadow navbar-light ">
         <div class="container-fluid full">
 
 
             <a class="navbar-brand" href="javascript:void(0)">
                 <img src="img/logo.png" alt="Avatar Logo" style="width:70px;" class="rounded-pill">
                 <span class="Lname"> Education Center</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span class="navbar-toggler-icon"></span>
                 </button>
             <div class="collapse navbar-collapse  " id="mynavbar">
@@ -82,16 +83,14 @@
 
             </div>
             <div class="row flex-nowrap">
-                <div class="col-auto c0l-sm-3 col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
-                    <div class="d-flex flex-column align-items-center shadow align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <div class="col-auto c0l-sm-3 col-md-3 col-xl-2 px-sm-2 px-0 bg-light ">
+                    <div class="d-flex flex-column align-items-center shadow align-items-sm-start px-3 pt-2 text-white min-vh-100  sticky-top">
                         <a class="navbar-brand " href="#">
-
-                            <a href="#" class="d-flex align-items-center   text-white text-decoration-none ">
-                                <img src="img/logo.png" alt="hugenerd" width="40" height="40">
-                                <span class="d-none d-sm-inline mx-1 uname">Education <br> Center</span>
+                            <a href="#" class="d-flex align-items-center  text-white text-decoration-none ">
+                                <i class="fa-solid fa-circle-user"></i>
                             </a>
-
                         </a>
+                        <span class="d-none d-sm-inline mx-1 uname "> <i class="fa-solid fa-circle"></i>user name</span>
                         <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 
                             <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
@@ -102,48 +101,63 @@
                                 </li>
                                 <li>
                                     <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                        <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Facility</span> </a>
+                                        <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
 
                                 </li>
                                 <li>
-                                    <a href="#" class="nav-link px-0 align-middle">
-                                        <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Department</span></a>
+                                    <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                        <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">My Course</span></a>
+                                    <ul class="collapse nav flex-column ms-1 " id="submenu2" data-bs-parent="#menu">
+                                        <li class="w-100">
+                                            <a href="#" class="nav-link px-0 "> <span class="d-none d-sm-inline">course</span> 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">course</span> 2</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li>
-                                    <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                                        <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">course</span></a>
 
-                                </li>
                                 <li>
-                                    <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                        <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">lecture</span> </a>
+                                    <hr class=" hr topbar-divider s-hr" style="color: black;">
 
+                                    <a href="#" class="nav-link px-0 align-middle">
+                                        <i class="bi bi-box-arrow-right" style="font-size: calc(1.275rem + .3vw)!important;"></i> <span class="ms-1 d-none d-sm-inline">Sign out</span> </a>
                                 </li>
+
                                 <li>
                                     <a href="#" class="nav-link px-0 align-middle">
-                                        <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">poste</span> </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link px-0 align-middle">
-                                        <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">users</span> </a>
+                                        <i class="bi bi-person-plus" style="font-size: calc(1.275rem + .3vw)!important;"></i> <span class="ms-1 d-none d-sm-inline">Sign up</span> </a>
                                 </li>
                             </ul>
-                            <hr>
+
 
                     </div>
                 </div>
                 <div class="col py-3">
 
                     <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-4">
 
+                                <div class="add card-body shadow">
+                                    <p class=" add card-text">Filter Course
+                                        <a href="#" class="btn btn-primary add">
+                                            <span class="material-symbols-outlined" style="font-size: 26px;font:bold;">
+                                                filter_list
+                                        </span>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                         <div id="accordion">
                             <div class="card mycard">
                                 <div class="card-header">
-                                    <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
-                                    Collapsible Group Item #1
-                                  </a>
+                                    <a class="btn" data-bs-toggle="collapse" href="#collapseOne" onclick="show2('.down-1');">
+                                        <i class="fa-solid fa-calendar-days"></i> Year One<i class="fa-solid fa-caret-down down-1"></i>
+                                    </a>
                                 </div>
-                                <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+                                <div id="collapseOne" class="collapse " data-bs-parent="#accordion">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-3 ">
@@ -206,9 +220,9 @@
                             </div>
                             <div class="card mycard">
                                 <div class="card-header">
-                                    <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
-                                  Collapsible Group Item #2
-                                </a>
+                                    <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo" onclick="show2('.down-2');">
+                                        <i class="fa-solid fa-calendar-days align-items-start"></i>Year Two<i class="fa-solid fa-caret-down down-2"></i>
+                                    </a>
                                 </div>
                                 <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
                                     <div class="card-body">
@@ -218,13 +232,150 @@
                             </div>
                             <div class="card mycard">
                                 <div class="card-header">
-                                    <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
-                                    Collapsible Group Item #3
-                                  </a>
+                                    <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree" onclick="show2('.down-3');">
+                                        <i class="fa-solid fa-calendar-days"></i>Year Three<i class="fa-solid fa-caret-down down-3"></i>
+                                    </a>
                                 </div>
                                 <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
                                     <div class="card-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        <div id="accordion1">
+
+                                            <div class="card mycard">
+                                                <div class="card-header">
+                                                    <a class="btn" data-bs-toggle="collapse" href="#collapseOne1" onclick="show1('.down-4')">
+                                                        <i class="fa-sharp fa-solid fa-1"></i> First Semester<i class="fa-solid fa-caret-down down-4"></i>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseOne1" class="collapse " data-bs-parent="#accordion1">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-sm-3 ">
+                                                                <div class="card mycourse ">
+                                                                    <img class="card-img-top" src="img/G.jpeg" alt="Card image">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Applied Sciences</h4>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="card mycourse ">
+                                                                    <img class="card-img-top" src="img/G.jpeg" alt="Card image">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Applied Sciences</h4>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="card mycourse ">
+                                                                    <img class="card-img-top" src="img/G.jpeg" alt="Card image">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Applied Sciences</h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-3 ">
+                                                                <div class="card mycourse ">
+                                                                    <img class="card-img-top" src="img/G.jpeg" alt="Card image">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Applied Sciences</h4>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="card mycourse ">
+                                                                    <img class="card-img-top" src="img/G.jpeg" alt="Card image">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Applied Sciences</h4>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="card mycourse ">
+                                                                    <img class="card-img-top" src="img/G.jpeg" alt="Card image">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Applied Sciences</h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="card mycard">
+                                                <div class="card-header">
+                                                    <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo1" onclick="show1('.down-5')">
+                                                        <i class="fa-sharp fa-solid fa-2"></i> Second Semester<i class="fa-solid fa-caret-down down-5"></i>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseTwo1" class="collapse" data-bs-parent="#accordion1">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-sm-3 ">
+                                                                <div class="card mycourse ">
+                                                                    <img class="card-img-top" src="img/G.jpeg" alt="Card image">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Applied Sciences</h4>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="card mycourse ">
+                                                                    <img class="card-img-top" src="img/G.jpeg" alt="Card image">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Applied Sciences</h4>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="card mycourse ">
+                                                                    <img class="card-img-top" src="img/G.jpeg" alt="Card image">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Applied Sciences</h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-3 ">
+                                                                <div class="card mycourse ">
+                                                                    <img class="card-img-top" src="img/G.jpeg" alt="Card image">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Applied Sciences</h4>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="card mycourse ">
+                                                                    <img class="card-img-top" src="img/G.jpeg" alt="Card image">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Applied Sciences</h4>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="card mycourse ">
+                                                                    <img class="card-img-top" src="img/G.jpeg" alt="Card image">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Applied Sciences</h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

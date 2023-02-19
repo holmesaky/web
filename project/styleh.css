@@ -53,12 +53,23 @@
                         border-radius: 50px;
                         height: 60px;
                         position: relative;
-                        width: 250px;
+                        width: 220px;
+                    }
+                    .fa-circle-user {
+                        font-size: 30px !important;
+                        margin: 0px!important;
+                    }
+                    hr.s-hr {
+                        width: 30px
                     }
                 }
                 
-                .navbar {
+                h .navbar {
                     margin-top: 5px;
+                }
+                
+                .s-hr {
+                    width: 160px;
                 }
                 
                 video {
@@ -124,6 +135,13 @@
                     div .card {
                         margin-top: 20px;
                         margin-left: auto;
+                    }
+                    .fa-circle-user {
+                        font-size: 30px;
+                        margin: 0px!important;
+                    }
+                    .s-hr {
+                        width: 30px;
                     }
                 }
                 
@@ -297,6 +315,10 @@
                     display: none;
                 }
                 
+                div.sidebar {
+                    position: sticky;
+                }
+                
                 .add-course.active {
                     display: inline-block;
                 }
@@ -369,7 +391,7 @@
                 }
                 
                 .mycourse:hover {
-                    transform: scale(1.05);
+                    transform: scale(1.02);
                     box-shadow: 0 10px 20px rgba(205, 240, 240, 0.548), 0 4px 8px rgba(0, 0, 0, .06);
                 }
                 
@@ -382,4 +404,57 @@
                     background-clip: border-box;
                     border: 0px solid rgba(0, 0, 0, .125);
                     border-radius: 0.25rem;
+                }
+                
+                .card .card-header {
+                    background-color: #ffff !important;
+                    border-bottom: 0px;
+                    justify-content: start;
+                }
+                
+                .card .card-header a:hover {
+                    background-color: #ffff !important;
+                    border-bottom: 3px solid #0d6efd;
+                }
+                
+                .card .card-header a {
+                    width: 220px;
+                    border-bottom: 3px solid rgba(0, 0, 0, .125);
+                }
+                
+                .fa-solid {
+                    color: #0d6efd;
+                    padding-right: 10px;
+                    padding-left: 10px;
+                }
+                
+                .btn {
+                    text-align: start;
+                    border: 0px solid transparent;
+                }
+                
+                .btn:focus {
+                    text-align: start;
+                    box-shadow: none;
+                    outline: none;
+                }
+                
+                .fa-circle {
+                    font-size: 8px;
+                    color: rgb(3, 177, 3);
+                }
+                
+                span.uname {
+                    margin-left: 20px!important;
+                    margin-top: 10px!important;
+                }
+                
+                .fa-circle-user {
+                    font-size: 60px;
+                    margin-left: 40px;
+                }
+                
+                .s-icon {
+                    padding: 0px;
+                    font-size: large;
                 }
