@@ -373,7 +373,7 @@
                 }
                 
                 .table-hover tbody tr:hover td {
-                    background: rgb(226, 238, 238);
+                    background: rgb(255, 255, 255)!important;
                 }
                 
                 .btn-light {
@@ -457,4 +457,109 @@
                 .s-icon {
                     padding: 0px;
                     font-size: large;
+                }
+                
+                span.edit:hover {
+                    color: rgb(255, 242, 0);
+                }
+                
+                .delete:hover {
+                    color: rgb(255, 0, 0);
+                }
+                
+                span.edit {
+                    color: #c29800;
+                }
+                
+                .delete {
+                    color: #9c0f05;
+                }
+                
+                input[type=text],
+                [type=password] {
+                    background-color: rgb(255, 255, 255);
+                    border: none;
+                    padding-left: 40px;
+                    border-bottom: 2px solid #ccc;
+                    pointer-events: stroke;
+                    resize: vertical;
+                    outline: none;
+                    font-size: large;
+                }
+                
+                #browser {
+                    background-color: rgb(255, 255, 255);
+                    border: none;
+                    padding-left: 40px;
+                    border-bottom: 2px solid #ccc;
+                    pointer-events: stroke;
+                    resize: vertical;
+                    outline: none;
+                    font-size: large;
+                }
+                
+                #browser:focus {
+                    border-bottom: 2px solid#0d6efd;
+                }
+                
+                input:focus {
+                    border-bottom: 2px solid#0d6efd;
+                }
+                
+                i.u {
+                    position: absolute;
+                    left: 15px;
+                    bottom: 6px;
+                    color: #0d6efd;
+                }
+                
+                input#input {
+                    width: 200px;
+                }
+                
+                #image {
+                    position: relative;
+                    left: 270px;
+                    width: 70px;
+                    height: 60px;
+                    background-position: center;
+                    background-size: contain;
+                    border-radius: 150px;
+                }
+                
+                .forms {
+                    position: relative;
+                    height: 450px;
+                    width: 450px;
+                }
+                
+                .view {
+                    width: 90%;
+                    height: fit-content;
+                    background-color: rgb(255, 255, 255);
+                    margin: auto;
+                    margin-top: 30px;
+                    padding: 30px;
+                    border: #0d6efd 2px solid;
+                    border-radius: 40px;
+                    box-shadow: 2px 2px 5px #b4c9e7!important;
+                }
+                
+                i.x {
+                    float: right;
+                    padding: 1px;
+                    border: solid 1px rgb(195, 193, 193);
+                    border-radius: 20%;
+                    color: #413c3c;
+                    margin: 5px;
+                    cursor: pointer;
+                }
+                
+                #input {
+                    display: none;
+                }
+                
+                .addcours {
+                    position: relative;
+                    margin: 17px 60px 0px 0px;
                 }

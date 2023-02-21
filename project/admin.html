@@ -14,6 +14,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
     <script src="script.js">
     </script>
     <link rel="stylesheet" href="styleh.css">
@@ -25,7 +29,7 @@
     <div class="container-fluid full">
         <div class="row flex-nowrap">
             <div class="col-auto c0l-sm-3 col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
-                <div class="d-flex flex-column align-items-center shadow align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <div class="d-flex flex-column align-items-center shadow align-items-sm-start px-3 pt-2 text-white min-vh-100  sticky-top">
                     <a class="navbar-brand " href="#">
 
                         <a href="#" class="d-flex align-items-center   text-white text-decoration-none ">
@@ -154,9 +158,11 @@
                         </div>
                         <div class="col-sm-4">
 
-                            <div class="add card-body shadow">
+
+                            <div class="add card-body shadow" data-bs-toggle="collapse" data-bs-target="#demo">
                                 <p class=" add card-text">Add New Course
                                     <a href="#" class="btn btn-primary add">
+
                                         <span class="material-symbols-outlined" style="font-size: 26px;font:bold;">
                                     add
                                     </span>
@@ -177,87 +183,182 @@
                             </div>
                         </div>
                     </div>
-                    <hr style="margin-left: 10px ;margin-right: 5px ;">
-                    <div class="row">
-                        <div class="col-sm-11" style="margin-left:30px ;">
-                            <h1 class="table-head" style="margin-left:30px;">Courses </h1>
-                            <div class=" table-responsive " style="padding-top:10px ; margin-left: 30px; ">
+
+                    <div id="demo" class="collapse">
+                        <div class="view" id="U_users">
+                            <h3 class="head"> Add New Course</h3>
+                            <form style="width: fit-content;">
 
 
-                                <p style="color: #023279 ">this table disply all courses exisit in the systyem:</p>
+                                <div class="row">
 
-                                <table class=" table table-hover ">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>D-ID</th>
-                                            <th>Description</th>
-                                            <th>Addition date</th>
-                                            <th>Photo</th>
-                                            <th>Type</th>
-                                            <th>Year</th </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>john@example.com</td>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>John</td>
-                                            <td class="button"><button type="button" class="btn btn-light"><span class="material-symbols-outlined" style="color: #c29800;">
+                                    <div class="col-sm-3 addcours"><i class="material-icons u">person</i>
+                                        <input type="text" name="username" id="username" placeholder="Enter Course Name  ">
+                                    </div>
+
+                                    <div class="col-sm-3 addcours">
+                                        <i class="material-icons u">email</i>
+                                        <input type="text" name="useremail" id="useremail" placeholder="Enter Description ">
+                                    </div>
+                                    <div class="col-sm-3 addcours"><i class="material-icons u">person</i>
+
+                                        <input list="type" name="browser" id="browser" placeholder="Select Type">
+
+                                        <datalist id="type">
+                                          <option value="اجباري جامعه">
+                                          <option value="اختياري جامعه">
+                                          <option value="اجباري كليه">
+                                          <option value="اجباري تخصص">
+                                          <option value="اختياري تخصص">
+                                        </datalist>
+                                    </div>
+
+
+
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-sm-3 addcours"><i class="material-icons u">person</i>
+
+                                        <input list="browsers" name="browser" id="browser" placeholder="Select Department">
+
+                                        <datalist id="browsers">
+                                          <option value="Edge">
+                                          <option value="Firefox">
+                                          <option value="Chrome">
+                                          <option value="Opera">
+                                          <option value="Safari">
+                                        </datalist>
+                                    </div>
+
+                                    <div class="col-sm-3 addcours">
+                                        <i class="material-icons u">email</i>
+
+                                        <input list="year" name="browser" id="browser" placeholder="Select Year">
+
+                                        <datalist id="year">
+                                          <option value="Year 1">
+                                          <option value="Year 2">
+                                          <option value="Year 3">
+                                          <option value="Year 4">
+                                          <option value="Year 5">
+                                        </datalist>
+                                    </div>
+                                    <div class="col-sm-3 addcours">
+                                        <i class="material-icons u">email</i>
+
+                                        <input list="semester" name="browser" id="browser" placeholder="Select Semester">
+
+                                        <datalist id="semester">
+                                          <option value="First Semester">
+                                          <option value="Second Semester">
+                                         
+                                        </datalist>
+                                    </div>
+                                    <label id="lab" for="input" style="cursor: pointer; position: relative; top:12px ;">
+                                        Select Image
+                                        <input type="file" id="input" name="imag" accept="image/jpeg, image/png, image/jpg">
+                                         </label>
+
+
+
+                                </div>
+                        </div>
+
+                        </form>
+
+
+
+
+
+
+                    </div>
+                </div>
+                <hr style="margin-left: 10px ;margin-right: 5px ;">
+                <div class="row">
+                    <div class="col-sm-11" style="margin-left:30px ;">
+                        <h1 class="table-head" style="margin-left:30px;">Courses </h1>
+                        <div class=" table-responsive " style="padding-top:10px ; margin-left: 30px; ">
+
+
+                            <p style="color: #023279 ">this table disply all courses exisit in the systyem:</p>
+
+                            <table class=" table table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>D-ID</th>
+                                        <th>Description</th>
+                                        <th>Addition date</th>
+                                        <th>Photo</th>
+                                        <th>Type</th>
+                                        <th>Year</th </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>john@example.com</td>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>John</td>
+                                        <td class="button"><button type="button" class="btn btn-light"><span class="material-symbols-outlined edit" >
                                                 edit
                                                 </span></button></td>
-                                            <td class="button"><button type="button" class="btn btn-light"><span class="material-symbols-outlined"style="color: #9c0f05;" >
+                                        <td class="button"><button type="button" class="btn btn-light"><span class="material-symbols-outlined delete" >
                                                 delete
                                                 </span></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mary</td>
-                                            <td>Moe</td>
-                                            <td>mary@example.com</td>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>John</td>
-                                            <td class="button"><button type="button" class="btn btn-light"><span class="material-symbols-outlined" style="color: #c29800;">
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>Mary</td>
+                                        <td>Moe</td>
+                                        <td>mary@example.com</td>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>John</td>
+                                        <td class="button"><button type="button" class="btn btn-light"><span class="material-symbols-outlined edit" >
                                                 edit
                                                 </span></button></td>
-                                            <td class="button"><button type="button" class="btn btn-light"><span class="material-symbols-outlined"style="color: #9c0f05;" >
+                                        <td class="button"><button type="button" class="btn btn-light"><span class="material-symbols-outlined delete" >
                                                 delete
                                                 </span></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>July</td>
-                                            <td>Dooley</td>
-                                            <td>july@example.com</td>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>John</td>
-                                            <td class="button"><button type="button" class="btn btn-light"><span class="material-symbols-outlined" style="  color: #c29800;">
+                                    </tr>
+                                    <tr>
+                                        <td>July</td>
+                                        <td>Dooley</td>
+                                        <td>july@example.com</td>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>John</td>
+                                        <td>Doe</td>
+                                        <td>John</td>
+                                        <td class="button"><button type="button" class="btn btn-light"><span class="material-symbols-outlined edit" >
                                                 edit
                                                 </span></button></td>
-                                            <td class="button"><button type="button" class="btn btn-light"><span class="material-symbols-outlined"style="color: #9c0f05;" >
+                                        <td class="button"><button type="button" class="btn btn-light"><span class="material-symbols-outlined delete" >
                                                 delete
                                                 </span></button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-
                 </div>
 
             </div>
 
         </div>
+
+    </div>
 
 
 </body>
